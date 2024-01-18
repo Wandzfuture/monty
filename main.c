@@ -18,12 +18,8 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Usage: %s filename\n", argv[0]);
 		return (EXIT_FAILURE);
 	}
-
-	while (1)
-	{
-		line_number++;
-	}
-
+	
+	/* TODO: read the file and call push and pall functions */
 	pall(&top, line_number);
 
 	return (EXIT_SUCCESS);
