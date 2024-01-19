@@ -6,14 +6,13 @@
  *
  * Return: No return value (void)
  */
-void monty_pint(stack_t **stack)
+void monty_pint(stack_t **stack, unsigned int line_number)
 {
-	int line_number = 0;
-
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
+
 	printf("%d\n", (*stack)->n);
 }

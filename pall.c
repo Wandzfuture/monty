@@ -8,9 +8,18 @@
  */
 void monty_pall(stack_t *stack)
 {
-	while (stack != NULL)
+	stack_t *current;
+
+	if (stack == NULL)
 	{
-		printf("%d\n", stack->n);
-		stack = stack->next;
+		fprintf(stderr, "Error: Empty stack\n");
+		exit(EXIT_FAILURE);
+	}
+
+	current = stack;
+	while (current != NULL)
+	{
+		printf("%d\n", current->n);
+		current = current->next;
 	}
 }

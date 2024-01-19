@@ -13,20 +13,20 @@ int main(void)
 	monty_push(&stack, 2);
 	monty_push(&stack, 3);
 	monty_pall(stack);
-	monty_pint(&stack);
+	monty_pint(&stack, 0);
 
-	/**
-	 * pop(&stack);
-	 * pall(stack);
-	 *
-	 * swap(&stack);
-	 * pall(stack);
-	 *
-	 * add(&stack);
-	 * pall(stack);
-	 *
-	 * nop();
-	 */
+
+	monty_pop(&stack);
+	monty_pall(stack);
+
+	monty_swap(&stack);
+	monty_pall(stack);
+
+	monty_add(&stack);
+	monty_pall(stack);
+
+	monty_nop(&stack, 0);
+
 
 	return (0);
 }

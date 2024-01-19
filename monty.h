@@ -36,10 +36,10 @@ typedef struct instruction_s
 
 stack_t *monty_push(stack_t **stack, int n);
 void monty_pall(stack_t *stack);
-void monty_pint(stack_t **stack);
+void monty_pint(stack_t **stack, unsigned int line_number);
 void monty_pop(stack_t **stack);
 void monty_swap(stack_t **stack);
 void monty_add(stack_t **stack);
-void monty_nop();
+void monty_nop(stack_t **stack, unsigned int counter);
 
 #endif
