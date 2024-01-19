@@ -1,26 +1,32 @@
 #include "monty.h"
 
-
 /**
- * main - Entry point for the Monty program
- * @argc: Number of arguments passed to the program
- * @argv: Array of strings containing the arguments
+ * main - Entry point of the Monty interpreter program
  *
- * Return: EXIT_SUCCESS on success, otherwise EXIT_FAILUR
+ * Return: Always 0 (success)
  */
-int main(int argc, char *argv[])
+int main(void)
 {
-	stack_t *top = NULL;
-	unsigned int line_number = 0;
+	stack_t *stack = NULL;
 
-	if (argc != 2)
-	{
-		fprintf(stderr, "Usage: %s filename\n", argv[0]);
-		return (EXIT_FAILURE);
-	}
-	
-	/* TODO: read the file and call push and pall functions */
-	pall(&top, line_number);
+	monty_push(&stack, 1);
+	monty_push(&stack, 2);
+	monty_push(&stack, 3);
+	monty_pall(stack);
+	monty_pint(&stack);
 
-	return (EXIT_SUCCESS);
+	/**
+	 * pop(&stack);
+	 * pall(stack);
+	 *
+	 * swap(&stack);
+	 * pall(stack);
+	 *
+	 * add(&stack);
+	 * pall(stack);
+	 *
+	 * nop();
+	 */
+
+	return (0);
 }

@@ -1,29 +1,23 @@
 #include "monty.h"
 
 /**
- * push - pushes an element onto the stack
- * @stack: pointer to the stack_t structure
- * @line_number: line number in the file
+ * monty_push - Pushes an integer onto the stack
+ * @stack: Pointer to a pointer to the top of the stack
+ * @n: Integer to be pushed onto the stack
  *
- * Return: nothing(void)
+ * Return: Pointer to the newly created node
  */
-void push(stack_t **stack, unsigned int line_number)
+stack_t *monty_push(stack_t **stack, int n)
 {
-	stack_t * new_node;
+	stack_t *new_node = malloc(sizeof(stack_t));
 
-	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
-	}
-
-	new_node->n = line_number;
+	new_node->n = n;
 	new_node->prev = NULL;
 	new_node->next = *stack;
-
-	if (*stack)
+	if (*stack != NULL)
 		(*stack)->prev = new_node;
-
 	*stack = new_node;
+	return (new_node);
 }
