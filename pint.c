@@ -3,6 +3,7 @@
 /**
  * monty_pint - Prints the value at the top of the stack
  * @stack: Pointer to a pointer to the top of the stack
+ * @line_number: Line number in the Monty bytecode file
  *
  * Return: No return value (void)
  */
